@@ -145,5 +145,24 @@ function selectFolder(element) {
     console.log('Saving data for folder with id:', folderId);
   }
 
+  function setDefaultCriteria() {
+    var criteriaSelect = document.getElementById("criteria");
+    var defaultCriteria = criteriaSelect.value;
+  
+    // Save the default criteria to localStorage
+    localStorage.setItem("defaultCriteria", defaultCriteria);
+  
+    alert("Default criteria set to: " + defaultCriteria);
+  }
+  
+  // Load default criteria if available
+  window.onload = function() {
+    var defaultCriteria = localStorage.getItem("defaultCriteria");
+    if (defaultCriteria) {
+      var criteriaSelect = document.getElementById("criteria");
+      criteriaSelect.value = defaultCriteria;
+    }
+  };
+  
 
 
