@@ -268,13 +268,11 @@ function displaySelectedCriteria() {
   var criteriaSelect = document.getElementById("criteria");
   var selectedOptions = [...criteriaSelect.selectedOptions].map(option => option.value);
 
-  // Save the default criteria to localStorage
   localStorage.setItem("defaultCriteria", JSON.stringify(selectedOptions));
 
   alert("Default criteria set to: " + selectedOptions.join(", "));
 }
 
-// Load default criteria if available
 window.onload = function() {
   var defaultCriteria = localStorage.getItem("defaultCriteria");
   if (defaultCriteria) {
